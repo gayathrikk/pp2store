@@ -57,14 +57,14 @@ public class test1 {
 
              String[] lines = output.toString().split("\n");
              System.out.println("+------------------------------------+------+-------+-------+--------+-------------------------+");
-             System.out.println("|       Filesystem                   | Size | Used  | Avail |  Use%  | Mounted on               |");
+             System.out.println("|       Filesystem                   | Size | Used  | Avail |  Use%  | Mounted on              |");
              System.out.println("+------------------------------------+------+-------+-------+--------+-------------------------+");
 
              StringBuilder emailContent = new StringBuilder();
              boolean sendEmail = false;
              for (int i = 1; i < lines.length; i++) {
                  String[] parts = lines[i].trim().split("\\s+");
-                 System.out.printf("| %-34s | %4s | %5s | %5s | %6s | %-23s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+                 System.out.printf("| %-34s | %4s | %5s | %5s | %6s | %-19s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
                  System.out.println("+------------------------------------+------+-------+-------+--------+-------------------------+");
 
                  int usePercent = Integer.parseInt(parts[4].replace("%", ""));
