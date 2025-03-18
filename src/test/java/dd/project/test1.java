@@ -68,7 +68,7 @@ public class test1 {
                  System.out.println("+------------------------------------+------+-------+-------+--------+-------------------------+");
 
                  int usePercent = Integer.parseInt(parts[4].replace("%", ""));
-                 if (usePercent > -1) {
+                 if (usePercent > 70) {
                      sendEmail = true;
                      if (parts[0].equals("df -h /mnt/local/nvmestorage")) {
                          emailContent.append("pp2v15.humanbrain.in  - D2_nvmeShare used storage is exceeding 70%\n");
@@ -130,8 +130,11 @@ public class test1 {
 	            // Set Subject: header field
 	            message.setSubject("PP2.humanbrain.in - STORAGE ALERT ⚠️ ");
 	            // Set the actual message
-	            message.setText("This email has been automatically generated:\n" + messageBody + "Attention and Action Required 🚨\n" + messageBody
-	                    + "\nPP2 **scanner_2 nvmeShare** storage utilization has crossed 70% 🚫:\n" + messageBody);
+	             message.setContent("This email has been automatically generated:<br>" + messageBody + 
+	            	    "Attention and Action Required <br>" + messageBody +
+	            	    "<br>PP2 <b>scanner_2 nvmeShare</b> storage utilization has crossed <b style='color:red;'>70%</b> :<br>" + messageBody + 
+	            	    "<br>Please clear unnecessary files to free up space and avoid storage-related issues.<br>" + messageBody, "text/html");
+
 	            System.out.println("sending...");
 	            // Send message
 	            Transport.send(message);
