@@ -64,7 +64,7 @@ public class test1 {
              boolean sendEmail = false;
              for (int i = 1; i < lines.length; i++) {
                  String[] parts = lines[i].trim().split("\\s+");
-                 System.out.printf("| %-34s | %4s | %5s | %5s | %6s | %-19s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+                 System.out.printf("| %-34s | %4s | %5s | %5s | %6s | %-21s |\n", parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
                  System.out.println("+------------------------------------+------+-------+-------+--------+-------------------------+");
 
                  int usePercent = Integer.parseInt(parts[4].replace("%", ""));
